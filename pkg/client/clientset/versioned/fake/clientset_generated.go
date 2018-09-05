@@ -20,8 +20,8 @@ package fake
 
 import (
 	clientset "github.com/anuruddhal/k8s-controller-core-resource/pkg/client/clientset/versioned"
-	trstringerv1 "github.com/anuruddhal/k8s-controller-core-resource/pkg/client/clientset/versioned/typed/myresource/v1"
-	faketrstringerv1 "github.com/anuruddhal/k8s-controller-core-resource/pkg/client/clientset/versioned/typed/myresource/v1/fake"
+	anuruddhalv1 "github.com/anuruddhal/k8s-controller-core-resource/pkg/client/clientset/versioned/typed/myresource/v1"
+	fakeanuruddhalv1 "github.com/anuruddhal/k8s-controller-core-resource/pkg/client/clientset/versioned/typed/myresource/v1/fake"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/watch"
 	"k8s.io/client-go/discovery"
@@ -71,12 +71,12 @@ func (c *Clientset) Discovery() discovery.DiscoveryInterface {
 
 var _ clientset.Interface = &Clientset{}
 
-// TrstringerV1 retrieves the TrstringerV1Client
-func (c *Clientset) TrstringerV1() trstringerv1.TrstringerV1Interface {
-	return &faketrstringerv1.FakeTrstringerV1{Fake: &c.Fake}
+// AnuruddhalV1 retrieves the AnuruddhalV1Client
+func (c *Clientset) AnuruddhalV1() anuruddhalv1.AnuruddhalV1Interface {
+	return &fakeanuruddhalv1.FakeAnuruddhalV1{Fake: &c.Fake}
 }
 
-// Trstringer retrieves the TrstringerV1Client
-func (c *Clientset) Trstringer() trstringerv1.TrstringerV1Interface {
-	return &faketrstringerv1.FakeTrstringerV1{Fake: &c.Fake}
+// Anuruddhal retrieves the AnuruddhalV1Client
+func (c *Clientset) Anuruddhal() anuruddhalv1.AnuruddhalV1Interface {
+	return &fakeanuruddhalv1.FakeAnuruddhalV1{Fake: &c.Fake}
 }

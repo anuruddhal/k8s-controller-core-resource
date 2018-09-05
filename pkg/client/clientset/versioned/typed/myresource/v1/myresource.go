@@ -53,7 +53,7 @@ type myResources struct {
 }
 
 // newMyResources returns a MyResources
-func newMyResources(c *TrstringerV1Client, namespace string) *myResources {
+func newMyResources(c *AnuruddhalV1Client, namespace string) *myResources {
 	return &myResources{
 		client: c.RESTClient(),
 		ns:     namespace,

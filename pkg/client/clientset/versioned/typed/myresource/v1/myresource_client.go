@@ -25,22 +25,22 @@ import (
 	rest "k8s.io/client-go/rest"
 )
 
-type TrstringerV1Interface interface {
+type AnuruddhalV1Interface interface {
 	RESTClient() rest.Interface
 	MyResourcesGetter
 }
 
-// TrstringerV1Client is used to interact with features provided by the trstringer.com group.
-type TrstringerV1Client struct {
+// AnuruddhalV1Client is used to interact with features provided by the anuruddhal.com group.
+type AnuruddhalV1Client struct {
 	restClient rest.Interface
 }
 
-func (c *TrstringerV1Client) MyResources(namespace string) MyResourceInterface {
+func (c *AnuruddhalV1Client) MyResources(namespace string) MyResourceInterface {
 	return newMyResources(c, namespace)
 }
 
-// NewForConfig creates a new TrstringerV1Client for the given config.
-func NewForConfig(c *rest.Config) (*TrstringerV1Client, error) {
+// NewForConfig creates a new AnuruddhalV1Client for the given config.
+func NewForConfig(c *rest.Config) (*AnuruddhalV1Client, error) {
 	config := *c
 	if err := setConfigDefaults(&config); err != nil {
 		return nil, err
@@ -49,12 +49,12 @@ func NewForConfig(c *rest.Config) (*TrstringerV1Client, error) {
 	if err != nil {
 		return nil, err
 	}
-	return &TrstringerV1Client{client}, nil
+	return &AnuruddhalV1Client{client}, nil
 }
 
-// NewForConfigOrDie creates a new TrstringerV1Client for the given config and
+// NewForConfigOrDie creates a new AnuruddhalV1Client for the given config and
 // panics if there is an error in the config.
-func NewForConfigOrDie(c *rest.Config) *TrstringerV1Client {
+func NewForConfigOrDie(c *rest.Config) *AnuruddhalV1Client {
 	client, err := NewForConfig(c)
 	if err != nil {
 		panic(err)
@@ -62,9 +62,9 @@ func NewForConfigOrDie(c *rest.Config) *TrstringerV1Client {
 	return client
 }
 
-// New creates a new TrstringerV1Client for the given RESTClient.
-func New(c rest.Interface) *TrstringerV1Client {
-	return &TrstringerV1Client{c}
+// New creates a new AnuruddhalV1Client for the given RESTClient.
+func New(c rest.Interface) *AnuruddhalV1Client {
+	return &AnuruddhalV1Client{c}
 }
 
 func setConfigDefaults(config *rest.Config) error {
@@ -82,7 +82,7 @@ func setConfigDefaults(config *rest.Config) error {
 
 // RESTClient returns a RESTClient that is used to communicate
 // with API server by this client implementation.
-func (c *TrstringerV1Client) RESTClient() rest.Interface {
+func (c *AnuruddhalV1Client) RESTClient() rest.Interface {
 	if c == nil {
 		return nil
 	}

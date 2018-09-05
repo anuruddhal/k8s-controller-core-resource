@@ -61,13 +61,13 @@ func NewFilteredMyResourceInformer(client versioned.Interface, namespace string,
 				if tweakListOptions != nil {
 					tweakListOptions(&options)
 				}
-				return client.TrstringerV1().MyResources(namespace).List(options)
+				return client.AnuruddhalV1().MyResources(namespace).List(options)
 			},
 			WatchFunc: func(options metav1.ListOptions) (watch.Interface, error) {
 				if tweakListOptions != nil {
 					tweakListOptions(&options)
 				}
-				return client.TrstringerV1().MyResources(namespace).Watch(options)
+				return client.AnuruddhalV1().MyResources(namespace).Watch(options)
 			},
 		},
 		&myresourcev1.MyResource{},

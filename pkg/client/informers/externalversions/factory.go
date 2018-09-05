@@ -172,9 +172,9 @@ type SharedInformerFactory interface {
 	ForResource(resource schema.GroupVersionResource) (GenericInformer, error)
 	WaitForCacheSync(stopCh <-chan struct{}) map[reflect.Type]bool
 
-	Trstringer() myresource.Interface
+	Anuruddhal() myresource.Interface
 }
 
-func (f *sharedInformerFactory) Trstringer() myresource.Interface {
+func (f *sharedInformerFactory) Anuruddhal() myresource.Interface {
 	return myresource.New(f, f.namespace, f.tweakListOptions)
 }

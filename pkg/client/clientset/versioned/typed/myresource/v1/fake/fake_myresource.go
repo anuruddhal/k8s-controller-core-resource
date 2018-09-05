@@ -30,13 +30,13 @@ import (
 
 // FakeMyResources implements MyResourceInterface
 type FakeMyResources struct {
-	Fake *FakeTrstringerV1
+	Fake *FakeAnuruddhalV1
 	ns   string
 }
 
-var myresourcesResource = schema.GroupVersionResource{Group: "trstringer.com", Version: "v1", Resource: "myresources"}
+var myresourcesResource = schema.GroupVersionResource{Group: "anuruddhal.com", Version: "v1", Resource: "myresources"}
 
-var myresourcesKind = schema.GroupVersionKind{Group: "trstringer.com", Version: "v1", Kind: "MyResource"}
+var myresourcesKind = schema.GroupVersionKind{Group: "anuruddhal.com", Version: "v1", Kind: "MyResource"}
 
 // Get takes name of the myResource, and returns the corresponding myResource object, and an error if there is any.
 func (c *FakeMyResources) Get(name string, options v1.GetOptions) (result *myresourcev1.MyResource, err error) {
